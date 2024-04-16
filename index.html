@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AI object detection</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <style>
+      body {
+        font-family: Algerian, sans-serif;
+        
+        border: 7px solid rgb(255, 255, 255); /* Add border to body */
+        padding: 20px; /* Add padding for spacing */
+        .highlight {
+          border: 1px solid #ee3535;
+          border-collapse: collapse;
+        }
+
+        .highlight td,
+        .highlight th {
+          border: 1px solid #ccc;
+          padding: 8px;
+          text-align: left;
+        }
+      }
+      .card-title{
+        color: #000000;
+      }
+      p{
+        color: #000000;
+      }
+      .col s12 m6 l3{
+        background-color:whitesmoke;
+      }
+      .card-content-white-text{
+        background-color:rgb(255, 255, 255);
+      }
+      h2{
+        color: pink;
+      }
+      h1{
+        color: pink;
+      }
+      
+    </style>
+    <!-- <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script> -->
+  </head>
+
+  <body>
+    <h1>Jaypee University of Engineering and Technology</h1>
+    <br>
+    <br>
+    <h2><u>Project: Artificial Intelligence Application Lab</u></h2>
+    <hr />
+    <h2 id="loadingText">Loading...</h2>
+    <!-- video with size of 0px because of chrome -->
+    <video playsinline autoplay muted controls="true" id="video"></video>
+    <br /><br />
+    <canvas id="c1"></canvas>
+    <br /><br />
+    <div class="row">
+      <!-- Detail box for Govind Rai -->
+      <div class="col s12 m6 l3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content-white-text">
+            <span class="card-title">Govind Rai</span>
+            <p>Batch: B5</p>
+            <p>Enroll No.:221B165</p>
+          </div>
+        </div>
+      </div>
+      <!-- Detail box for Indranil Samanta -->
+      <div class="col s12 m6 l3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content-white-text">
+            <span class="card-title">Indranil Samanta</span>
+            <p>Batch: B6</p>
+            <p>Enroll No.:221B183</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail box for Dheeraj Verma -->
+      <div class="col s12 m6 l3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content-white-text">
+            <span class="card-title">Dheeraj Verma</span>
+            <p>Batch: B5</p>
+            <p>Enroll No.:221B145</p>
+          </div>
+        </div>
+      </div>
+      <!-- Detail box for Divyanshu Prajapati -->
+      <div class="col s12 m6 l3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content-white-text">
+            <span class="card-title">Divyanshu Prajapati</span>
+            <p>Batch: B5</p>
+            <p>Enroll No.:221B155</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="highlight">
+      <tr>
+        <td>AI:</td>
+        <td>
+          <div class="switch">
+            <label>
+              Off
+              <input type="checkbox" id="ai" disabled />
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>FPS:</td>
+        <td>
+          <div class="range-field">
+            <input type="range" id="fps" min="1" max="60" value="50" />
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      var modelIsLoaded = false;
+
+      // Create a ObjectDetector method
+      const objectDetector = ml5.objectDetector("cocossd", {}, modelLoaded);
+
+      // When the model is loaded
+      function modelLoaded() {
+        console.log("Model Loaded!");
+        modelIsLoaded = true;
+      }
+    </script>
+    <script src="video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

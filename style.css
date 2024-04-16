@@ -1,0 +1,35 @@
+
+
+
+body {
+    text-align: center;
+    
+    background-color: #003e80;
+    font-family: Algerian, sans-serif;
+    color: aliceblue;
+}
+
+video {
+    width: 0px;
+    height: 0px;
+}
+
+table {
+    width: auto;
+    margin: auto;
+}
+
+tr, td {
+    border: 0px;
+    text-align: center; 
+}
+.card-content white-text{
+    background-color: aliceblue;
+    border:1px black solid;
+}
+.card blue-grey darken-1{
+    background-color: aliceblue;
+}
+.col s12 m6 l3{
+    background: #003e80;
+}
